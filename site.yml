@@ -1,7 +1,15 @@
 ---
-- hosts:web_servers
-  become: true
+- name:Install httpd
+  hosts: web_servers
+  become: yes
   tasks:
-    - name: Print OS info
-      ansible.builtin.dnf:
+    - name: Install httpd package
+      yum:
         name: httpd
+        state: present
+
+    - name: Start and enable httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: yes
