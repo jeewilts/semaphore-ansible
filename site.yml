@@ -1,6 +1,7 @@
 ---
 - name:Install httpd
-  hosts: web_servers
+  hosts: all
+  gather_facts: true
   become: true
   tasks:
     - name: Install httpd package
