@@ -1,7 +1,7 @@
 ---
 - name:Install httpd
   hosts: my_servers
-  become: yes
+  become: true
   tasks:
     - name: Install httpd package
       ansible.builtin.package:
