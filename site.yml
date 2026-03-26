@@ -1,15 +1,9 @@
 ---
 - name:Install httpd
-  hosts: web_servers
+  hosts: my_servers
   become: yes
   tasks:
     - name: Install httpd package
-      yum:
+      ansible.builtin.package:
         name: httpd
         state: present
-
-    - name: Start and enable httpd service
-      service:
-        name: httpd
-        state: started
-        enabled: yes
