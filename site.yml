@@ -3,6 +3,6 @@
   hosts: all
   gather_facts: true
   tasks:
-    - name: show gather_facts:
-        debug:
-            msg: "{{ ansible_facts }}"
+   name: show gather facts
+   debug:
+     msg: "{{ ansible_facts }}"
