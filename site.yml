@@ -1,14 +1,8 @@
 ---
-- name: Install HTTPD using Ansible Playbook
+- name: check server
   hosts: all
-  become: true
+  gather_facts: true
   tasks:
-    - name: Install HTTPD package
-      package:
-        name: httpd
-        state: present
-    - name: Start HTTPD service
-      service:
-        name: httpd
-        state: started
-        enabled: yes
+    - name: show gather_facts:
+        debug:
+            msg: "{{ ansible_facts }}"
