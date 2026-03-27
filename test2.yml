@@ -1,8 +1,8 @@
 ---
-name: hello world
-hosts: web_servers
-gather_facts: true
-tasks:
- - name: hello world
-   debug:
-     msg: "Hello World!"
+- name: hello world
+  hosts: web_servers
+  gather_facts: true
+  tasks:
+    - name: hello world
+      debug:
+      msg: "Hello World!"
